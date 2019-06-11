@@ -31,7 +31,7 @@ class Order(BaseModel):
 class Batch(BaseModel):
     reference = models.CharField(max_length=100)
     purchase_channel = models.CharField(max_length=100)
-    orders = models.ManyToManyField(Order)
+    orders = models.ManyToManyField(Order, null=True, blank=True)
     user = models.ForeignKey(
         User, on_delete=models.PROTECT, related_name='batches')
 
