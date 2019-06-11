@@ -6,6 +6,7 @@ from api.views.batches.batches_views import (BatchCloseToDeliveryServiceView,
 from api.views.orders.orders_details_views import (OrderDetailsView,
                                                    OrdersSearchView)
 from api.views.orders.orders_views import OrdersView
+from api.views.users.users_financial_views import UserFinancialReportView
 from api.views.users.users_signin_views import UserSignInView
 from api.views.users.users_signup_views import UserSignUpView
 
@@ -22,6 +23,11 @@ urlpatterns = [
         'users/signin',
         UserSignInView.as_view(),
         name='user_signin',
+    ),
+    path(
+        'users/financial-report',
+        UserFinancialReportView.as_view(),
+        name='user_financial_report',
     ),
     #
     # Orders
